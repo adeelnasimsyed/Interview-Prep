@@ -21,7 +21,7 @@ def queensAttackKing(queens, king):
 		moveKing_X = kingX
 		moveKing_Y = kingY
 
-		while(moveKing_X >= 0 and moveKing_X < 8 and moveKing_Y >= 0 and moveKing_Y < 8):
+		while(moveKing_X + dx >= 0 and moveKing_X + dx < 8 and moveKing_Y + dy>= 0 and moveKing_Y + dy < 8):
 
 			moveKing_X += dx
 			moveKing_Y += dy
