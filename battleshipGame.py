@@ -37,6 +37,24 @@ def battleshipGame(board, moves):
             break
         ship += 1
 
-  for k, v in d.items():
+  miss = True
+  for move_x, move_y in moves:
+    for k, v in d.items():
+
+      for x,y in v:
+
+        if x != move_x and y != move_y:
+
 
     print(k, v)
+
+
+
+board = [[".", ".","#","#"], 
+[".", ".","#","#"],
+["#", ".",".","."],
+[".", ".",".","."]]
+moves = [[1,0], [0,3], [1,3]]
+battleshipGame(board, moves)
+
+
