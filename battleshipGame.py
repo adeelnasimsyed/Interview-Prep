@@ -37,40 +37,34 @@ def battleshipGame(board, moves):
           if shipFound:
             break
         ship += 1
-  nextMove = False
-  miss = True
-  for move_x, move_y in moves:
-    nextMove = False
-    for k, v in d.items():
-      miss = False
-      for x,y in v:
 
-        if x != move_x and y != move_y:
-          miss = True
+  for move in moves:
+
+    miss = True
+
+    for values in d.values():
+
+      if move in values:
         
-        elif x == move_x and y == move_y:
-          if len(v) == 1 and len(d) > 1:
-            print("Dead")
-            output.append("Dead")
-            del d[k]
-            nextMove = True
-            break
-          if len(v) == 1 and len(d) == 1:
+        if len(values) == 1:
+          
+          if len(d) == 1:
             output.append("Game Over")
-            nextMove = True
-            break
+            return output
+          
           else:
-            print("Hit")
-            output.append("Hit")
-            nextMove = True
+            output.append("Dead")
+
+            miss = False
             break
-      
-      if nextMove:
-        break
-      if miss:
-        output.append("Miss")
+        else:
+          values.remove(move)
+          output.append("Hit")
+          miss = False
+          break
 
-
+    if miss:
+      output.append("Miss")
 
   return output
 
@@ -81,5 +75,5 @@ board = [[".", ".","#","#"],
 ["#", ".",".","."],
 [".", ".",".","."]]
 moves = [[1,0], [0,3], [1,3]]
-battleshipGame(board, moves)
+print(battleshipGame(board, moves))
 
