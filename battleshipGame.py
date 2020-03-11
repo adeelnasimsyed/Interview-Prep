@@ -37,12 +37,13 @@ def battleshipGame(board, moves):
           if shipFound:
             break
         ship += 1
+  print(d)
 
   for move in moves:
 
     miss = True
-
-    for values in d.values():
+    print(len(d))
+    for i, values in enumerate(d.values()):
 
       if move in values:
         
@@ -53,6 +54,8 @@ def battleshipGame(board, moves):
             return output
           
           else:
+            
+            d.pop(i, None)
             output.append("Dead")
 
             miss = False
@@ -66,6 +69,9 @@ def battleshipGame(board, moves):
     if miss:
       output.append("Miss")
 
+
+ 
+
   return output
 
 
@@ -74,6 +80,6 @@ board = [[".", ".","#","#"],
 [".", ".","#","#"],
 ["#", ".",".","."],
 [".", ".",".","."]]
-moves = [[1,0], [0,3], [1,3]]
+moves = [[0,2],[1,2], [0,3], [1,3],[2,0],[3,0]]
 print(battleshipGame(board, moves))
 
