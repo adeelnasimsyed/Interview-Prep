@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <windows.h>
+#include <string.h>
 #define sleep(x) Sleep(1000 * (x))
 
 void swap(int *a, int *b){
@@ -150,6 +151,23 @@ int * insertionSort(int arr[], int size){
 	return (int*)arr;
 }
 
+void reverseString(char string[], int length){
+
+	char *start = string;
+	char *end = start + length - 1;
+	char temp;
+
+	while(start < end){
+
+		temp = *start;
+		*start = *end;
+		*end = temp;
+		start++;
+		end--;
+
+	}
+
+}
 
 void main(){
 
@@ -166,20 +184,34 @@ void main(){
 
 	// timeElapsed = (double)(end - begin);
 
-	int i;
+	// int i;
 	//mergeSort(array, 0, size - 1);
 
 	//quickSort(array, 0, size - 1);
 
-	int *sorted_arr = insertionSort(array, size);
+	// int *sorted_arr = insertionSort(array, size);
 
-	for(i = 0; i < size; ++i){
+	// for(i = 0; i < size; ++i){
 
-		printf("%d ", array[i]);
+	// 	printf("%d ", array[i]);
+	
+	// char s1[] = "hello";
+	// reverseString(s1, 5);
+	// printf("%s\n", s1);
+
+
+	const volatile int local = 10; 
+	int *ptr = (int*) &local; 
+	printf("Initial value of local : %d \n", local); 
+	*ptr = 100; 
+	printf("Modified value of local: %d \n", local); 
+ 
+
+
+
 	}
 
 
-	printf("\n");
 	// printf("\nTime Elapsed = %f \n", timeElapsed);
 
 
