@@ -37,12 +37,11 @@ def battleshipGame(board, moves):
           if shipFound:
             break
         ship += 1
-  print(d)
+
 
   for move in moves:
 
     miss = True
-    print(len(d))
     for i, values in enumerate(d.values()):
 
       if move in values:
