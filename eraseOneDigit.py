@@ -17,13 +17,12 @@ def eraseOneDigit(firstNum, secondNum, thirdNum):
 	if len(d) > 1:
 		return False
 
-	return True	
+	return True
 
 
 
-
-firstNum = "167"
-secondNum = "33"
-thirdNum = "100"
+firstNum = "200"
+secondNum = "100"
+thirdNum = "300"
 
 print(eraseOneDigit(firstNum, secondNum, thirdNum))
