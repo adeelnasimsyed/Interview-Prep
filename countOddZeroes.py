@@ -1,22 +1,22 @@
 def countOddZeroes(arr):
 
-  count = 0
+  oddCount = 0
 
   for num in arr:
-    numCount = 0
+    zeroCount = 0
 
     while(num):
 
       if num % 10 == 0:
-        numCount += 1
+        zeroCount += 1
       
       num = num // 10
     
-    if numCount % 2 == 1:
-      count += 1
+    if zeroCount % 2 == 1:
+      oddCount += 1
   
 
-  return count
+  return oddCount
 
 
 array = [100, 7000, 80111]

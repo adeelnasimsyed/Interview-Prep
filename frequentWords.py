@@ -1,4 +1,4 @@
-from collections import defaultdict
+ from collections import defaultdict
 
 #returns the first k most frequent words in a string(same frequency ordered alphabetically)
 def frequentWords(words, k):
