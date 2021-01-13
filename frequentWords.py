@@ -1,4 +1,4 @@
- from collections import defaultdict
+from collections import defaultdict
 
 #returns the first k most frequent words in a string(same frequency ordered alphabetically)
 def frequentWords(words, k):
@@ -10,10 +10,12 @@ def frequentWords(words, k):
 
 		d[word] += 1
 
-
-	print(d)
+	for v in sorted(d.items(), key = lambda kv: (-kv[1], kv[0])):
+		print(v)
+	
 	output = [v[0] for v in sorted(d.items(), key = lambda kv: (-kv[1], kv[0]), reverse=False)]
 
+	print(output)
 	print(output[:k])
 
 
