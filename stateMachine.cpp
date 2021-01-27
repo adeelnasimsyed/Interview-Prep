@@ -8,39 +8,40 @@ using namespace std;
 
 class StateMachine{
     private:
-    int startState;
-    int currentState;
-    map<pair<int, char>, int> transitions;
+        int startState;
+        int currentState;
+        map<pair<int, char>, int> transitions;
     
     public:
-    StateMachine(int sS, vector<tuple<int, char, int>> vec){
-        
-        startState = sS;
-        currentState = sS;
-        
-        for(auto entry: vec)
+        StateMachine(int sS, vector<tuple<int, char, int>> vec)
         {
-            cout<< get<0>(entry) <<endl;
-            
-            transitions[{get<0>(entry), get<1>(entry)}] = get<2>(entry);
-        }
         
-    }
+            startState = sS;
+            currentState = sS;
+        
+            for(auto entry: vec)
+            {
+                cout<< get<0>(entry) <<endl;
+            
+                transitions[{get<0>(entry), get<1>(entry)}] = get<2>(entry);
+            }
+        
+        }
     
-    bool isAccepted(char check)
-    {
+        bool isAccepted(char check)
+        {
         
-        auto itr = transitions.find({currentState, check});
-        if (itr != transitions.end())
-        {   
+            auto itr = transitions.find({currentState, check});
+            if (itr != transitions.end())
+            {   
             
-            currentState = transitions[itr->first]; 
-            cout << currentState <<endl;
-            return true;
-        }
+                currentState = transitions[itr->first]; 
+                cout << currentState <<endl;
+                return true;
+            }
         
-        return false;
-    }
+            return false;
+        }
 };
 
 
