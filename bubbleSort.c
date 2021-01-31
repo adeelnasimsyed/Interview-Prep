@@ -34,13 +34,31 @@ void count_swap(int a_count, int *a)
 	printf("%d\n", a[a_count-1]);
 }
 
+void check(int *num1, int *num2)
+{
+	*num1 = 10;
+	*num2 = 20;
+}
 
+int check1(int a, int b);
 
 void main(void)
 {
 
-	int a[] = {6,4,1};
-	int a_count = sizeof(a)/sizeof(a[0]);
+/*	int a[20] = {6,4,1};
+	int i = 0;
+	for(i = 0; i < 20; i++)
+		printf("%d\n", a[i]);*/
 
-	count_swap(a_count, a);
+	
+	printf("%d\n",check1(1,2));
+
+/*	int a_count = sizeof(a)/sizeof(a[0]);
+
+	count_swap(a_count, a);*/
+}
+
+int check1(int num1, int num2)
+{
+	return num1 + num2;
 }
