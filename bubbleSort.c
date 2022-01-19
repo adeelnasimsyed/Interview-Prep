@@ -40,7 +40,6 @@ void check(int *num1, int *num2)
 	*num2 = 20;
 }
 
-int check1(int a, int b);
 
 void main(void)
 {
@@ -50,15 +49,16 @@ void main(void)
 	for(i = 0; i < 20; i++)
 		printf("%d\n", a[i]);*/
 
-	
-	printf("%d\n",check1(1,2));
+	char c = 'c';
+	char *ptr = &c;
+
+	printf("%d\n", ptr);
+	printf("%c\n", c);
+	printf("%d\n", &c);
+	printf("%d\n", ptr+1);
 
 /*	int a_count = sizeof(a)/sizeof(a[0]);
 
 	count_swap(a_count, a);*/
 }
 
-int check1(int num1, int num2)
-{
-	return num1 + num2;
-}

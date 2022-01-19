@@ -45,6 +45,7 @@ class StateMachine{
 };
 
 
+
 int main()
 {   
     tuple<int, char, int> tup;
@@ -57,3 +58,4 @@ int main()
     cout << sM.isAccepted('b') << endl;
     return 0;
 }
+

@@ -18,14 +18,14 @@ public:
 	{
 		this->name = name;
 		this->health = health;
-		this->attackStrength = attackStrength;
+		this->attackStrength = attackStrength; 
 		this->blockStrength = blockStrength;
 	}
 
-	Warrior()
+	/*Warrior()
 	{
 
-	}
+	}*/
 
 	string getName()
 	{
@@ -93,9 +93,9 @@ public:
 
 	static void StartFight(Warrior& player1, Warrior& player2)
 	{
-		Warrior players[2];		
-		players[0] = player1;
-		players[1] = player2;
+		Warrior players[2] = {player1, player2};		
+	/*	players[0] = player1;
+		players[1] = player2;*/
 		int attacker = 1, defender = 0;
 		int i = 0;
 
